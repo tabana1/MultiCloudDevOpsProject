@@ -48,7 +48,7 @@ tag_public = "public RT"
 #######################
 
 type-ec2 = "t2.large"
-key-pair = "Project"
+key-pair = "Terraform-pair"
 
 #######################
 #     CloudWatch      #
