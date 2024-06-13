@@ -25,7 +25,7 @@ resource "aws_instance" "ec2-pub" {
   monitoring = true
 
   tags = {
-    Name = "Public-Instance-${count.index}"
+    Name = "Ivolve Instance"
   }
 }
 
