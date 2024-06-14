@@ -46,9 +46,9 @@ pipeline {
                 script {                
                     dir('my-app') {
                                 // sonarQubeCD(Token_Sonar)	
-          withSonarQubeEnv() { 
+          withSonarQubeEnv('sonar-qube') { 
 		    sh 'chmod +x gradlew'
-        	sh "./gradlew sonar" 
+            sh './gradlew sonar -Dsonar.java.binaries=build/classes'
 	}
         //                            withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
         //                 sh  """

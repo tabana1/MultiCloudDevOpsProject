@@ -13,6 +13,12 @@ sonar {
     property "sonar.projectName", "java-application"
   }
 }
+sonarqube {
+    properties {
+        property "sonar.java.binaries", "build/classes"
+    }
+}
+
 
 
 group = 'com.example'
