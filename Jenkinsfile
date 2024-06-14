@@ -39,9 +39,12 @@ pipeline {
 	    stage('SonarQube CD') {
             steps {
                 script {
-                    dir('Application') {
-                                sonarQubeCD()	
-                        }
+                    dir('Application') {	
+                	         runUnitTests()
+                    }
+                    // dir('Application') {
+                    //             sonarQubeCD()	
+                    //     }
             }
         }
         }
