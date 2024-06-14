@@ -14,7 +14,7 @@ pipeline {
         GIT_REPO = 'https://github.com/tabana1/MultiCloudDevOpsProject'
         OPENSHIFT_PROJECT = 'mohamedtabana'
         OPENSHIFT_CREDENTIALS_ID = 'open-shift-service'
-      //  Token_Sonar = 'sonarqube'
+       Token_Sonar = 'sonarqube'
         // SonarHostUrl = 'http://192.168.153.134:9000'
         SCANNER_HOME = tool 'sonar-qube'
 
