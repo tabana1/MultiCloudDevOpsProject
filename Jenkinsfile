@@ -64,16 +64,16 @@ pipeline {
             }
         }
 
-    post {
-        always {
-            echo 'Pipeline execution completed'
-        }
-        success {
-            echo 'Pipeline executed successfully'
-        }
-        failure {
-            echo 'Pipeline execution failed'
-        }
-        }
+    // post {
+    //     always {
+    //         echo 'Pipeline execution completed'
+    //     }
+    //     success {
+    //         echo 'Pipeline executed successfully'
+    //     }
+    //     failure {
+    //         echo 'Pipeline execution failed'
+    //     }
+    //     }
     }
 }
