@@ -1,10 +1,11 @@
 @Library('java-shared-library') _
-tools {
+
+pipeline {
+    agent any
+    tools {
         jdk 'jdk-17'
         maven 'maven'
     }
-pipeline {
-    agent any
 
     environment {
         dockerHubCredentialsID = 'docker'
@@ -14,7 +15,7 @@ pipeline {
         OPENSHIFT_PROJECT = 'mohamedtabana'
         OPENSHIFT_CREDENTIALS_ID = 'open-shift-service'
         Token_Sonar = 'sonarqube'
-        SonarHostUrl = 'http://192.168.153.134:9000'
+        // SonarHostUrl = 'http://192.168.153.134:9000'
 
     }
   
