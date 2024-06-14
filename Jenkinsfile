@@ -48,7 +48,7 @@ pipeline {
                                 // sonarQubeCD(Token_Sonar)	
                             withSonarQubeEnv() { 
 		                    sh 'chmod +x gradlew'
-        	                sh "./gradlew sonar" 
+        	                sh "./gradlew sonarqube" 
 	                            }
                         }
             }
