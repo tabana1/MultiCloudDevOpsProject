@@ -44,7 +44,7 @@ pipeline {
                         }
             }
         }
-    }
+        }
         stage('Build and Push Docker Image') {
             steps {
                 script {
@@ -74,6 +74,6 @@ pipeline {
         failure {
             echo 'Pipeline execution failed'
         }
-    }
+        }
     }
 }
