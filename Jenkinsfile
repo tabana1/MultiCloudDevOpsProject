@@ -46,20 +46,22 @@ pipeline {
                 script {                
                     dir('my-app') {
                                 // sonarQubeCD(Token_Sonar)	
-                       
+          withSonarQubeEnv() { 
+		    sh 'chmod +x gradlew'
+        	sh "./gradlew sonar" 
+	}
+        //                            withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
+        //                 sh  """
+        //                 	chmod +x gradlew
 
-                                   withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
-                        sh  """
-                        	chmod +x gradlew
-
-                            ./gradlew sonar \
-                            -Dsonar.projectKey= "java-project" \
-                            -Dsonar.host.url=${SonarHostUrl} \
-                            -Dsonar.token=${SONAR_TOKEN} \
-                            -Dsonar.scm.provider=git \
-                            -Dsonar.java.binaries=build/classes
-                            """
-          }
+        //                     ./gradlew sonar \
+        //                     -Dsonar.projectKey= "java-project" \
+        //                     -Dsonar.host.url=${SonarHostUrl} \
+        //                     -Dsonar.token=${SONAR_TOKEN} \
+        //                     -Dsonar.scm.provider=git \
+        //                     -Dsonar.java.binaries=build/classes
+        //                     """
+        //   }
 
                         }
             }
