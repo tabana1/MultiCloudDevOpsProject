@@ -16,6 +16,7 @@ pipeline {
         OPENSHIFT_CREDENTIALS_ID = 'open-shift-service'
         Token_Sonar = 'sonarqube'
         // SonarHostUrl = 'http://192.168.153.134:9000'
+        SCANNER_HOME = tool 'sonar'
 
     }
   
