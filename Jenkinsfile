@@ -46,10 +46,12 @@ pipeline {
                 script {                
                     dir('my-app') {
                                 // sonarQubeCD(Token_Sonar)	
-                            withSonarQubeEnv() { 
-		                    sh 'chmod +x gradlew'
-        	                sh "./gradlew sonarqube" 
-	                            }
+                           withSonarQubeEnv(credentialsId: 'Token_Sonar') {
+			                    echo "Running SonarQube Analysis..."
+	                        	sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=ivolve-cd \
+		                        -Dsonar.java.binaries=. \
+                            	-Dsonar.projectKey=ivolve-cd '''
+	}
                         }
             }
         }
