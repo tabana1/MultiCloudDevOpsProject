@@ -29,13 +29,13 @@ pipeline {
 	    }
 
 
-        stage('Checkout') {
-            steps {
-                script {
-                    git branch: 'main', url: 'https://github.com/tabana1/MultiCloudDevOpsProject'
-                }
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         script {
+        //             git branch: 'main', url: 'https://github.com/tabana1/MultiCloudDevOpsProject'
+        //         }
+        //     }
+        // }
 	    stage('SonarQube CD') {
             steps {
                 script {
