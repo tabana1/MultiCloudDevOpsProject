@@ -1,11 +1,11 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: java-route
+  name: java-deployment
 spec:
   to:
     kind: Service
-    name: java-app-service
+    name: java-service
   port:
     targetPort: 8081
   tls:
