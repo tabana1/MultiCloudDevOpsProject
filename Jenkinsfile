@@ -50,6 +50,8 @@ pipeline {
 
                                    withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
                         sh  """
+                        	chmod +x gradlew
+
                             ./gradlew sonar \
                             -Dsonar.projectKey= "java-project" \
                             -Dsonar.host.url=${SonarHostUrl} \
