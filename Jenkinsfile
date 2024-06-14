@@ -48,7 +48,7 @@ pipeline {
                 	//          runUnitTests()
                     // }
                     dir('my-app') {
-                                sonarQubeCD()	
+                                sonarQubeCD(Token_Sonar)	
                         }
             }
         }
