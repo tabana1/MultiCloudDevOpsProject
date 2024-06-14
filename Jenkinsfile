@@ -1,11 +1,14 @@
 @Library('java-shared-library') _
-
+tools {
+        jdk 'jdk-17'
+        maven 'maven'
+    }
 pipeline {
     agent any
 
     environment {
         dockerHubCredentialsID = 'docker'
-        imageName = 'tabana1/static-website'
+        imageName = 'tabana1/ivolve-grad'
         OPENSHIFT_SERVER = 'https://console-openshift-console.apps.ocp-training.ivolve-test.com'
         GIT_REPO = 'https://github.com/tabana1/MultiCloudDevOpsProject'
         OPENSHIFT_PROJECT = 'mohamedtabana'
@@ -21,7 +24,7 @@ pipeline {
         stage('Run Unit Test') {
             steps {
                 script {
-                    dir('Application') {	
+                    dir('my-app') {	
                 	         runUnitTests()
                     }
         	}
@@ -39,12 +42,12 @@ pipeline {
 	    stage('SonarQube CD') {
             steps {
                 script {
-                    dir('Application') {	
-                	         runUnitTests()
-                    }
-                    // dir('Application') {
-                    //             sonarQubeCD()	
-                    //     }
+                    // dir('Application') {	
+                	//          runUnitTests()
+                    // }
+                    dir('my-app') {
+                                sonarQubeCD()	
+                        }
             }
         }
         }
