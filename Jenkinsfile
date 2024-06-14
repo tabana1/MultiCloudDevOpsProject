@@ -14,7 +14,7 @@ pipeline {
         GIT_REPO = 'https://github.com/tabana1/MultiCloudDevOpsProject'
         OPENSHIFT_PROJECT = 'mohamedtabana'
         OPENSHIFT_CREDENTIALS_ID = 'open-shift-service'
-        mysonar-token = 'sonarqube'
+      //  mysonar-token = 'sonarqube'
         SonarHostUrl = 'http://192.168.153.134:9000'
         SCANNER_HOME = tool 'sonar-qube'
 
@@ -48,7 +48,7 @@ pipeline {
                                 // sonarQubeCD(Token_Sonar)	
                        
 
-                                   withCredentials([string(credentialsId: 'mysonar-token', variable: 'SONAR_TOKEN')]) {
+                                   withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
                         sh  """
                             ./gradlew sonar \
                             -Dsonar.projectKey= "java-project" \
