@@ -14,6 +14,10 @@ pipeline {
         SonarHostUrl = 'http://192.168.153.134:9000'
 
     }
+  
+
+    stages {
+        
         stage('Run Unit Test') {
             steps {
                 script {
@@ -22,9 +26,9 @@ pipeline {
                     }
         	}
     	    }
-	}
+	    }
 
-    stages {
+
         stage('Checkout') {
             steps {
                 script {
@@ -32,7 +36,7 @@ pipeline {
                 }
             }
         }
-	stage('SonarQube CD') {
+	    stage('SonarQube CD') {
             steps {
                 script {
                     dir('Application') {
@@ -41,7 +45,7 @@ pipeline {
             }
         }
     }
-         stage('Build and Push Docker Image') {
+        stage('Build and Push Docker Image') {
             steps {
                 script {
                     dir('my-app'){
@@ -60,7 +64,7 @@ pipeline {
             }
         }
 
-post {
+    post {
         always {
             echo 'Pipeline execution completed'
         }
@@ -71,4 +75,5 @@ post {
             echo 'Pipeline execution failed'
         }
     }
-}}
+    }
+}
