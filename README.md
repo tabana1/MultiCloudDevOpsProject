@@ -327,6 +327,6 @@ Certainly! Here's the structured representation of your project directory that i
 
     ```
 
-    ![](https://github.com/tabana1/MultiCloudDevOpsProject/blob/main/screenshot/final%20result.png)
+    ![](https://github.com/tabana1/MultiCloudDevOpsProject/blob/main/screenshot/final%20output.png)
 
 
